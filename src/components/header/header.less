@@ -1,0 +1,101 @@
+.waper {
+  width: 100%;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
+li {
+  cursor: pointer;
+}
+.header-waper {
+  color: #fff;
+  height: 50px;
+  width: 100%;
+  padding: 0 15%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  background-color: #333;
+
+  .login-infor {
+    width: 50%;
+  }
+  .login-infor > ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    li:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+  .header-list {
+    flex: 1;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      .mg(@index) when (@index<=3) {
+        li:nth-child(@{index}) {
+          margin-right: 20px;
+        }
+        .mg(@index+1);
+      }
+      .mg(1);
+    }
+  }
+}
+.nav {
+  height: 100px;
+  width: 100%;
+  padding: 0 15%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  .user {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #333;
+  }
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+    .logo-font {
+      font-size: 40px;
+      font-weight: 600;
+      margin-right: 15px;
+    }
+    .logo-dec {
+      text-align: left;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  .nav-list > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    .nav-li(@index) when (@index<6) {
+      li:nth-child(@{index}) {
+        margin-right: 40px;
+      }
+      .nav-li(@index+1);
+    }
+    .nav-li(1);
+  }
+}
