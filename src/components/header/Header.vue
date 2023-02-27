@@ -25,7 +25,9 @@
         </div>
         <div class="nav-list">
           <ul>
-            <li v-for="item in HeaderConfig.nav">{{ item.title }}</li>
+            <li v-for="item in nav" :class="item.default ? 'action' : ''">
+              <span @click="navAction(item)">{{ item.title }}</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -36,8 +38,20 @@
   </div>
 </template>
 <script lang="ts" setup>
+import _ from "lodash";
+import { reactive } from "vue";
 import { HeaderConfig } from "./header.config";
 const hlist = HeaderConfig.list;
+const nav = reactive(HeaderConfig.nav);
+const navAction = (inputItem: typeof nav[0]) => {
+  _.map(nav, (item) => {
+    if (item.id === inputItem.id) {
+      item.default = true;
+    } else {
+      item.default = false;
+    }
+  });
+};
 </script>
 <style lang="less" scoped>
 @import url("./header.less");

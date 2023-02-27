@@ -38,31 +38,37 @@ export const HeaderConfig = {
       id: 1,
       title: "首页",
       path: "",
+      default: true,
     },
     {
       id: 2,
       title: "箱包货源",
       path: "",
+      default: false,
     },
     {
       id: 3,
       title: "识图搜款",
       path: "",
+      default: false,
     },
     {
       id: 4,
       title: "找网供",
       path: "",
+      default: false,
     },
     {
       id: 5,
       title: "找代发",
       path: "",
+      default: false,
     },
     {
       id: 6,
       title: "找摄影",
       path: "",
+      default: false,
     },
   ],
 };

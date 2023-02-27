@@ -23,6 +23,7 @@ const routes: RouteRecordRaw[] = [
     path: "/index",
     name: "Index",
     component: () => import("../pages/content/Content.vue"),
+    redirect: "/source",
     children: [
       {
         path: "/source",

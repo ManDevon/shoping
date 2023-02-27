@@ -10,6 +10,7 @@
               placeholder="请输入账号"
               type="text"
               name="username"
+              @input="inputHandler"
               v-model="store.username"
             />
           </div>
@@ -23,10 +24,14 @@
               id="password"
               type="password"
               name="password"
+              @input="inputHandler"
               v-model="store.password"
               autocomplete=""
             />
           </div>
+        </div>
+        <div class="item error" v-if="store.error.code">
+          <span>{{ `${store.error.msg}(${store.error.code})` }}</span>
         </div>
         <div class="btn-group">
           <button @click="login">登陆</button>
@@ -43,6 +48,9 @@ const router = useRouter();
 const store = UserStore();
 const login = () => {
   store.login();
+};
+const inputHandler = () => {
+  store.initError();
 };
 const register = () => {};
 </script>
