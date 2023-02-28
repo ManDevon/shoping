@@ -30,6 +30,12 @@ const routes: RouteRecordRaw[] = [
         name: "source",
         component: () => import("../pages/content/children/index/index.vue"),
       },
+      {
+        path: "/spackedge",
+        name: "SourcePackedge",
+        component: () =>
+          import("@/pages/content/children/sourcepackedge/SourcePackedge.vue"),
+      },
     ],
   },
 ];

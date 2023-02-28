@@ -37,13 +37,13 @@ export const HeaderConfig = {
     {
       id: 1,
       title: "首页",
-      path: "",
+      path: "/source",
       default: true,
     },
     {
       id: 2,
       title: "箱包货源",
-      path: "",
+      path: "/spackedge",
       default: false,
     },
     {

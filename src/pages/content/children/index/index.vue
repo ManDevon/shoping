@@ -3,6 +3,7 @@
   <div class="waper">
     <MainList></MainList>
   </div>
+  <div class="shoping-list"></div>
 </template>
 
 <script lang="ts" setup>

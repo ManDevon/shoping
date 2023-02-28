@@ -40,6 +40,7 @@
 <script lang="ts" setup>
 import _ from "lodash";
 import { reactive } from "vue";
+import route from "@/router/router";
 import { HeaderConfig } from "./header.config";
 const hlist = HeaderConfig.list;
 const nav = reactive(HeaderConfig.nav);
@@ -51,6 +52,7 @@ const navAction = (inputItem: typeof nav[0]) => {
       item.default = false;
     }
   });
+  route.push(inputItem.path);
 };
 </script>
 <style lang="less" scoped>
