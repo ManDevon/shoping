@@ -22,13 +22,25 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/index",
     name: "Index",
-    component: () => import("../pages/content/Content.vue"),
+    component: () => import("@/pages/content/Content.vue"),
     redirect: "/source",
     children: [
       {
         path: "/source",
         name: "source",
-        component: () => import("../pages/content/children/index/index.vue"),
+        component: () => import("@/pages/content/children/index/index.vue"),
+        children: [
+          {
+            path: "/source/packedge-list/:type",
+            name: "PkgWm",
+            component: () => import("@/components/shopinglist/ShopContent.vue"),
+          },
+          // {
+          //   path: "/source/travel-pkg",
+          //   name: "PkgWm",
+          //   component: () => import("@/components/shopinglist/ShopContent.vue"),
+          // },
+        ],
       },
       {
         path: "/spackedge",

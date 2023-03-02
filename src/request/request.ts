@@ -68,7 +68,7 @@ declare type PostParams<T extends object> = {
 const dummyFun = (options: PostParams<any>) => {
   const newOptions: PostParams<any> = Object.assign({}, options);
   newOptions.sourceUrl = options.url;
-  newOptions.url = `../src/assets/dummy${options.url}.json`;
+  newOptions.url = `http://${location.host}/src/assets/dummy${options.url}.json`;
   return Get(newOptions);
 };
 export function Post(options: PostParams<any>) {

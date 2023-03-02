@@ -3,7 +3,9 @@
   <div class="waper">
     <MainList></MainList>
   </div>
-  <div class="shoping-list"></div>
+  <div class="shoping-list">
+    <RouterView></RouterView>
+  </div>
 </template>
 
 <script lang="ts" setup>

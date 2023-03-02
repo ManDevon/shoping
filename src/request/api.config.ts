@@ -16,4 +16,11 @@ export const Api = {
       params: {},
     });
   },
+
+  getSellerList: () => {
+    return Post({
+      url: "/sellerlist",
+      params: {},
+    });
+  },
 };

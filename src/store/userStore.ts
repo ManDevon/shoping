@@ -16,7 +16,7 @@ const UserStore = defineStore("userStore", {
   getters: {},
   actions: {
     login() {
-      if (!this.username && !this.password) {
+      if (!this.username || !this.password) {
         (this.error.code = "201"), (this.error.msg = "账号或密码错误");
         return;
       }

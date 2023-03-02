@@ -14,9 +14,9 @@
       </li>
     </ul>
   </div>
-  <div :class="showMore ? 'show-more' : 'hidden-more'">
+  <!-- <div :class="showMore ? 'show-more' : 'hidden-more'">
     <span>asdf</span>
-  </div>
+  </div> -->
 </template>
 <script lang="ts" setup>
 import _ from "lodash";

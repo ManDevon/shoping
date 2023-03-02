@@ -1,14 +1,16 @@
 <template>
-  <div class="waper">
-    <Item
-      v-for="item in store.list"
-      :title="item.title"
-      :dec="item.dec"
-      :path="item.path"
-    ></Item>
-  </div>
   <div>
-    <Navigation></Navigation>
+    <div class="waper">
+      <Item
+        v-for="item in store.list"
+        :title="item.title"
+        :dec="item.dec"
+        :path="item.path"
+      ></Item>
+    </div>
+    <div>
+      <Navigation></Navigation>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>

@@ -5,7 +5,7 @@
       <div class="dec">{{ $props.dec }}</div>
     </div>
     <div class="btn">
-      <input type="button" value="立即查看" @click="handleNow($props.path)" />
+      <input type="button" value="立即查看" @click="handleNow($props.path)"/>
     </div>
   </div>
 </template>
