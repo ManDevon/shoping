@@ -22,12 +22,22 @@
 import _ from "lodash";
 import { reactive, ref } from "vue";
 import { navconfig } from "./navigation.config";
+import ShopListStore from "@/store/ShopListStore";
 const config = reactive(navconfig);
 const showMore = ref(false);
+const shopStore = ShopListStore();
+let defCurrentItem = reactive(
+  config[
+    _.findIndex(config, (item) => {
+      return item.default === true;
+    })
+  ]
+);
 const defaultNav_more = {
   id: config[config.length - 1].id + 1,
   title: "更多",
   path: "",
+  type: "more",
   default: false,
 };
 if (config[config.length - 1].title !== defaultNav_more.title) {
@@ -50,8 +60,16 @@ const eventHandler = (options: typeof defaultNav_more) => {
         item.default = false;
       }
     }
+    if (defCurrentItem.id !== options.id) {
+      defCurrentItem = options;
+      shopStore.getSellerList(defCurrentItem.type);
+    }
   });
 };
+const init = () => {
+  shopStore.getSellerList(defCurrentItem.type);
+};
+init();
 </script>
 <style lang="less" scoped>
 @import url("./navigation.less");

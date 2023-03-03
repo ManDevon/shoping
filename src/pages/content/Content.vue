@@ -6,7 +6,6 @@
     <div class="content">
       <RouterView />
     </div>
-    <div class="footer"></div>
   </div>
 </template>
 <script lang="ts" setup>

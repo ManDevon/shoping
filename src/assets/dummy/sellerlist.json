@@ -5,14 +5,84 @@
       {
         "src": "",
         "shopTitle": "",
-        "price": "",
+        "price": 0,
         "mark": "",
         "sourceWebAddress": "",
         "sourceWebName": "鑫颖网供",
         "local": "",
-        "number": "",
+        "number": 0,
+        "sellerNum": ""
+      },
+      {
+        "src": "",
+        "shopTitle": "",
+        "price": 0,
+        "mark": "",
+        "sourceWebAddress": "",
+        "sourceWebName": "鑫颖网供",
+        "local": "",
+        "number": 0,
+        "sellerNum": ""
+      },
+      {
+        "src": "",
+        "shopTitle": "",
+        "price": 0,
+        "mark": "",
+        "sourceWebAddress": "",
+        "sourceWebName": "鑫颖网供",
+        "local": "",
+        "number": 0,
+        "sellerNum": ""
+      },
+      {
+        "src": "",
+        "shopTitle": "",
+        "price": 0,
+        "mark": "",
+        "sourceWebAddress": "",
+        "sourceWebName": "鑫颖网供",
+        "local": "",
+        "number": 0,
+        "sellerNum": ""
+      },
+      {
+        "src": "",
+        "shopTitle": "",
+        "price": 0,
+        "mark": "",
+        "sourceWebAddress": "",
+        "sourceWebName": "鑫颖网供",
+        "local": "",
+        "number": 0,
+        "sellerNum": ""
+      },
+      {
+        "src": "",
+        "shopTitle": "",
+        "price": 0,
+        "mark": "",
+        "sourceWebAddress": "",
+        "sourceWebName": "鑫颖网供",
+        "local": "",
+        "number": 0,
+        "sellerNum": ""
+      },
+      {
+        "src": "",
+        "shopTitle": "",
+        "price": 0,
+        "mark": "",
+        "sourceWebAddress": "",
+        "sourceWebName": "鑫颖网供",
+        "local": "",
+        "number": 0,
         "sellerNum": ""
       }
-    ]
+    ],
+    "pageation": {
+      "totalpage": 200,
+      "currentpage": 5
+    }
   }
 }

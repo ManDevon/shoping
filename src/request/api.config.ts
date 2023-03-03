@@ -17,10 +17,12 @@ export const Api = {
     });
   },
 
-  getSellerList: () => {
+  getSellerList: (type: string) => {
     return Post({
-      url: "/sellerlist",
-      params: {},
+      url: `/sellerlist`,
+      params: {
+        type,
+      },
     });
   },
 };

@@ -31,7 +31,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import("@/pages/content/children/index/index.vue"),
         children: [
           {
-            path: "/source/packedge-list/:type",
+            path: "/source/packedge-list",
             name: "PkgWm",
             component: () => import("@/components/shopinglist/ShopContent.vue"),
           },

@@ -6,6 +6,8 @@
   <div class="shoping-list">
     <RouterView></RouterView>
   </div>
+
+  <div class="footer"></div>
 </template>
 
 <script lang="ts" setup>

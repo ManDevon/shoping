@@ -5,12 +5,14 @@ import { Goods } from "@/interface/Goods.imp";
 const ShopListStore = defineStore("ShopListStore", {
   state: () => ({
     list: reactive<Goods[]>([]),
+    pageaction: reactive({}),
   }),
   getters: {},
   actions: {
     getSellerList(type: string) {
-      Api.getSellerList().then((res: any) => {
-        this.list = res;
+      Api.getSellerList(type).then((res: any) => {
+        this.list = res.list;
+        this.pageaction = res.pageation;
       });
     },
   },
