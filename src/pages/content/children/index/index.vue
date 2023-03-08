@@ -1,5 +1,5 @@
 <template>
-  <Banner></Banner>
+  <Banner from="index"></Banner>
   <div class="waper">
     <MainList></MainList>
   </div>

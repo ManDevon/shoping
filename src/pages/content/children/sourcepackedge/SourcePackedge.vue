@@ -1,5 +1,5 @@
 <template>
-  <Banner></Banner>
+  <Banner from="SCPKG"></Banner>
 </template>
 <style lang="less" scoped>
 @import url("./SourcePackedge.less");

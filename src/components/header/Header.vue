@@ -41,10 +41,11 @@
 import _ from "lodash";
 import { reactive } from "vue";
 import route from "@/router/router";
-import { HeaderConfig } from "./header.config";
+import { HeaderConfig, ItemType } from "./header.config";
 const hlist = HeaderConfig.list;
 const nav = reactive(HeaderConfig.nav);
-const navAction = (inputItem: typeof nav[0]) => {
+const emitsFun = defineEmits(["change"]);
+const navAction = (inputItem: ItemType) => {
   _.map(nav, (item) => {
     if (item.id === inputItem.id) {
       item.default = true;
@@ -52,6 +53,7 @@ const navAction = (inputItem: typeof nav[0]) => {
       item.default = false;
     }
   });
+  emitsFun("change", inputItem);
   route.push(inputItem.path);
 };
 </script>

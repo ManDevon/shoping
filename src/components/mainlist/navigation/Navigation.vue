@@ -14,9 +14,6 @@
       </li>
     </ul>
   </div>
-  <!-- <div :class="showMore ? 'show-more' : 'hidden-more'">
-    <span>asdf</span>
-  </div> -->
 </template>
 <script lang="ts" setup>
 import _ from "lodash";
@@ -29,6 +26,9 @@ const shopStore = ShopListStore();
 let defCurrentItem = reactive(
   config[
     _.findIndex(config, (item) => {
+      if (item.default) {
+        localStorage.setItem("type", item.type);
+      }
       return item.default === true;
     })
   ]
@@ -56,6 +56,7 @@ const eventHandler = (options: typeof defaultNav_more) => {
     if (options.id !== config[config.length - 1].id) {
       if (item.id === options.id) {
         item.default = true;
+        localStorage.setItem("type", item.type);
       } else {
         item.default = false;
       }

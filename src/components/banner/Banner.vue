@@ -1,7 +1,7 @@
 <template>
   <div class="banner">
     <div class="waper">
-      <div class="local">
+      <div class="local" v-if="props.from === 'index'">
         <div><span>地区筛选:</span></div>
         <ul>
           <li v-for="item in localList">{{ item.name }}</li>
@@ -28,6 +28,9 @@
 <script lang="ts" setup>
 import { Config } from "./banner.config";
 import { reactive, ref } from "vue";
+const props = defineProps<{
+  from: string;
+}>();
 const localList = reactive(Config.local);
 
 const searchVal = ref("");

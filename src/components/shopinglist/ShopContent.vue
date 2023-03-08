@@ -5,9 +5,9 @@
         <div>热卖好物</div>
         <div class="mark">个性推荐</div>
       </div>
-      <div class="item-waper" :style="{ '--length': store.list.length }">
+      <div class="item-waper">
         <Item
-          v-for="item in store.list"
+          v-for="item in list"
           :number="item.number"
           :name="item.name"
           :price="item.price"
@@ -18,21 +18,22 @@
       </div>
     </div>
     <div class="pagenation">
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <Pagenation
+        :totalpage="totalpage"
+        :currentpage="currentpage"
+        :maxlength="10"
+        :next="next"
+      ></Pagenation>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { useRouter } from "vue-router";
 import ShopListStore from "@/store/ShopListStore";
 import Item from "./Item/Item.vue";
-const router = useRouter();
-console.log(router.currentRoute.value);
-const store = ShopListStore();
+import Pagenation from "./pagenation/Pagenation.vue";
+import { storeToRefs } from "pinia";
+const { totalpage, currentpage, list } = storeToRefs(ShopListStore());
+const next = () => {};
 </script>
 <style lang="less" scoped>
 @import url("./shopcontent.less");

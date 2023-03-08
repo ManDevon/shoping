@@ -18,7 +18,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { Goods } from "@/interface/Goods.imp";
 export declare type ShopListType = {
   src: string;
   shopTitle?: string;

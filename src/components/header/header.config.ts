@@ -1,3 +1,9 @@
+export type ItemType = {
+  id: number;
+  title: string;
+  path: string;
+  default: boolean;
+};
 export const HeaderConfig = {
   loginInfor: [
     {
@@ -37,7 +43,7 @@ export const HeaderConfig = {
     {
       id: 1,
       title: "首页",
-      path: "/source",
+      path: "/source/packedge-list",
       default: true,
     },
     {

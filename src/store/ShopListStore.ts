@@ -1,18 +1,31 @@
 import { defineStore } from "pinia";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { Api } from "@/request/api.config";
-import { Goods } from "@/interface/Goods.imp";
+export interface Goods {
+  src: string;
+  name: string;
+  title?: string;
+  dec?: string;
+  price: number;
+  number: number;
+  like: number;
+  sellerNum: string;
+  webAddress?: string;
+}
 const ShopListStore = defineStore("ShopListStore", {
   state: () => ({
     list: reactive<Goods[]>([]),
-    pageaction: reactive({}),
+    totalpage: ref(0),
+    currentpage: ref(1),
   }),
   getters: {},
   actions: {
-    getSellerList(type: string) {
-      Api.getSellerList(type).then((res: any) => {
+    async getSellerList(type: string = "pw", pageIndex: number = 1) {
+      await Api.getSellerList(type, pageIndex).then((res: any) => {
         this.list = res.list;
-        this.pageaction = res.pageation;
+        this.totalpage = res.pageation.totalpage;
+        this.currentpage = res.pageation.currentpage;
+        console.log("request", "getSellerList");
       });
     },
   },

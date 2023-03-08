@@ -17,11 +17,12 @@ export const Api = {
     });
   },
 
-  getSellerList: (type: string) => {
+  getSellerList: (type: string, pageIndex: number) => {
     return Post({
       url: `/sellerlist`,
       params: {
         type,
+        pageIndex,
       },
     });
   },
