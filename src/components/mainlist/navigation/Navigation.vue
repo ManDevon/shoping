@@ -18,21 +18,22 @@
 <script lang="ts" setup>
 import _ from "lodash";
 import { reactive, ref } from "vue";
-import { navconfig } from "./navigation.config";
+import { navconfig, navType } from "./navigation.config";
 import ShopListStore from "@/store/ShopListStore";
 const config = reactive(navconfig);
 const showMore = ref(false);
 const shopStore = ShopListStore();
-let defCurrentItem = reactive(
-  config[
+const getDefault = (config: navType[]): navType => {
+  return config[
     _.findIndex(config, (item) => {
       if (item.default) {
         localStorage.setItem("type", item.type);
       }
       return item.default === true;
     })
-  ]
-);
+  ];
+};
+let defCurrentItem = reactive(getDefault(config));
 const defaultNav_more = {
   id: config[config.length - 1].id + 1,
   title: "更多",

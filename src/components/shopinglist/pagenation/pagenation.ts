@@ -40,13 +40,33 @@ class BasePagenation {
   }
 }
 export class Pagenation extends BasePagenation implements IPagenation {
-  constructor(props: PagenationPropsType) {
+  private constructor(props: PagenationPropsType) {
     super(props);
     if (!props.elementId) {
       return;
     }
     this.elementId = props.elementId;
     this.render();
+  }
+
+  static INIT = (
+    totalpage?: number,
+    currentPage?: number,
+    maxLength?: number,
+    elementId?: string
+  ) => {
+    return new Pagenation({
+      totalpage: totalpage ? totalpage : 0,
+      currentPage: currentPage ? currentPage : 0,
+      maxLength: maxLength ? maxLength : 0,
+      elementId: elementId ? elementId : "",
+    });
+  };
+  setInitData(options: PagenationPropsType) {
+    this.totalpage = options.totalpage;
+    this.currentPage = options.currentPage;
+    this.maxLength = options.maxLength;
+    this.elementId = options.elementId;
   }
   private changePageLoopNumber(type: actionType) {
     switch (type) {

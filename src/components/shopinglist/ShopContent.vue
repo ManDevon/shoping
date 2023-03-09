@@ -22,7 +22,6 @@
         :totalpage="totalpage"
         :currentpage="currentpage"
         :maxlength="10"
-        :next="next"
       ></Pagenation>
     </div>
   </div>
@@ -33,7 +32,6 @@ import Item from "./Item/Item.vue";
 import Pagenation from "./pagenation/Pagenation.vue";
 import { storeToRefs } from "pinia";
 const { totalpage, currentpage, list } = storeToRefs(ShopListStore());
-const next = () => {};
 </script>
 <style lang="less" scoped>
 @import url("./shopcontent.less");

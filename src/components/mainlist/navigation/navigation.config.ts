@@ -1,3 +1,10 @@
+export declare type navType = {
+  id: number;
+  title: string;
+  path: string;
+  type: string;
+  default: boolean;
+};
 export const navconfig = [
   {
     id: 1,

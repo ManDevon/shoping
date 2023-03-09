@@ -23,20 +23,15 @@ const props = defineProps<{
   currentpage: number;
   maxlength: number;
 }>();
-let page = new Pagenation({
-  totalpage: 200,
-  currentPage: props.currentpage,
-  maxLength: props.maxlength,
-  elementId: "",
-});
+let page = Pagenation.INIT();
 onUpdated(() => {
   console.log("pagenation.vue", props.currentpage, "---", props.totalpage);
 });
 onMounted(() => {
-  page = new Pagenation({
+  page.setInitData({
     totalpage: 200,
-    currentPage: props.currentpage,
     maxLength: props.maxlength,
+    currentPage: props.maxlength,
     elementId: "loop",
   });
 });
