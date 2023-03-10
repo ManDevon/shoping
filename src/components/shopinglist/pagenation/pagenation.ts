@@ -1,4 +1,5 @@
 import ShopListStore from "@/store/ShopListStore";
+import { ref } from "vue";
 
 export const ADD = "add";
 export const DEL = "del";
@@ -43,7 +44,7 @@ export class Pagenation extends BasePagenation implements IPagenation {
   private constructor(props: PagenationPropsType) {
     super(props);
     const element: HTMLElement | null = document.getElementById(
-      props.elementId ? props.elementId : "#loop"
+      props.elementId ? props.elementId : "loop"
     );
     if (!props.elementId && !element) {
       return;
@@ -62,15 +63,18 @@ export class Pagenation extends BasePagenation implements IPagenation {
       totalpage: totalpage ? totalpage : 0,
       currentPage: currentPage ? currentPage : 0,
       maxLength: maxLength ? maxLength : 0,
-      elementId: elementId ? elementId : "",
+      elementId: elementId ? elementId : "loop",
     });
   };
   setInitData(options: PagenationPropsType) {
-    this.totalpage = options.totalpage;
+    this.totalpage =
+      options.totalpage > 0
+        ? options.totalpage
+        : Number(document.querySelector("#totalpage")?.textContent);
     this.currentPage = options.currentPage;
     this.maxLength = options.maxLength;
     const element: HTMLElement | null = document.getElementById(
-      options.elementId ? options.elementId : "#loop"
+      options.elementId ? options.elementId : "loop"
     );
     if (!options.elementId && !element) {
       return;

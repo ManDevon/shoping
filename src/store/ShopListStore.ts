@@ -25,7 +25,6 @@ const ShopListStore = defineStore("ShopListStore", {
         this.list = res.list;
         this.totalpage = res.pageation.totalpage;
         this.currentpage = res.pageation.currentpage;
-        console.log("request", "getSellerList");
       });
     },
   },

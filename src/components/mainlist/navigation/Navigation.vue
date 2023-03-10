@@ -19,10 +19,8 @@
 import _ from "lodash";
 import { reactive, ref } from "vue";
 import { navconfig, navType } from "./navigation.config";
-import ShopListStore from "@/store/ShopListStore";
 const config = reactive(navconfig);
 const showMore = ref(false);
-const shopStore = ShopListStore();
 const getDefault = (config: navType[]): navType => {
   return config[
     _.findIndex(config, (item) => {
@@ -64,14 +62,9 @@ const eventHandler = (options: typeof defaultNav_more) => {
     }
     if (defCurrentItem.id !== options.id) {
       defCurrentItem = options;
-      shopStore.getSellerList(defCurrentItem.type);
     }
   });
 };
-const init = () => {
-  shopStore.getSellerList(defCurrentItem.type);
-};
-init();
 </script>
 <style lang="less" scoped>
 @import url("./navigation.less");
