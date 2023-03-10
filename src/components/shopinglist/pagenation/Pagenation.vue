@@ -3,7 +3,7 @@
     <ul>
       <li class="navli"><img src="@/assets/icons/v1/left.svg" /></li>
     </ul>
-    <ul id="loop"></ul>
+    <ul id="loop" :totalpage="props.totalpage"></ul>
     <ul>
       <li class="navli" @click="page.prev()">
         <img src="@/assets/icons/v1/left.svg" />
@@ -16,7 +16,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, onUpdated } from "vue";
+import { onBeforeMount, onMounted, onUpdated, ref, watch } from "vue";
 import { Pagenation } from "./pagenation";
 const props = defineProps<{
   totalpage: number;
@@ -24,14 +24,13 @@ const props = defineProps<{
   maxlength: number;
 }>();
 let page = Pagenation.INIT();
-onUpdated(() => {
-  console.log("pagenation.vue", props.currentpage, "---", props.totalpage);
-});
+onUpdated(() => {});
+onBeforeMount(() => {});
 onMounted(() => {
   page.setInitData({
     totalpage: 200,
-    maxLength: props.maxlength,
-    currentPage: props.maxlength,
+    maxLength: 10,
+    currentPage: 1,
     elementId: "loop",
   });
 });

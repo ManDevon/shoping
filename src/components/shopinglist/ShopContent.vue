@@ -32,6 +32,8 @@ import Item from "./Item/Item.vue";
 import Pagenation from "./pagenation/Pagenation.vue";
 import { storeToRefs } from "pinia";
 const { totalpage, currentpage, list } = storeToRefs(ShopListStore());
+
+// console.log("shopcontentvue", "=======", totalpage, currentpage, list);
 </script>
 <style lang="less" scoped>
 @import url("./shopcontent.less");

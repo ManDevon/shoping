@@ -30,7 +30,7 @@ class BasePagenation {
   currentPage: number = 0;
   maxLength: number = 0;
   end: number = 0;
-  elementId: string = "";
+  element: HTMLElement | null = null;
   constructor(props: PagenationPropsType) {
     this.totalpage = props.totalpage;
     this.start = props.start || 1;
@@ -42,10 +42,13 @@ class BasePagenation {
 export class Pagenation extends BasePagenation implements IPagenation {
   private constructor(props: PagenationPropsType) {
     super(props);
-    if (!props.elementId) {
+    const element: HTMLElement | null = document.getElementById(
+      props.elementId ? props.elementId : "#loop"
+    );
+    if (!props.elementId && !element) {
       return;
     }
-    this.elementId = props.elementId;
+    this.element = element;
     this.render();
   }
 
@@ -66,7 +69,16 @@ export class Pagenation extends BasePagenation implements IPagenation {
     this.totalpage = options.totalpage;
     this.currentPage = options.currentPage;
     this.maxLength = options.maxLength;
-    this.elementId = options.elementId;
+    const element: HTMLElement | null = document.getElementById(
+      options.elementId ? options.elementId : "#loop"
+    );
+    if (!options.elementId && !element) {
+      return;
+    }
+
+    this.element = element;
+    this.end = options.maxLength || 0;
+    this.render();
   }
   private changePageLoopNumber(type: actionType) {
     switch (type) {
@@ -115,7 +127,7 @@ export class Pagenation extends BasePagenation implements IPagenation {
   /**
    */
   render() {
-    const ul: HTMLElement | null = document.querySelector("#loop");
+    const ul: HTMLElement | null = this.element;
     const active: number = this.currentPage;
     while (ul?.firstChild) {
       ul.removeChild(ul.firstChild);
@@ -139,7 +151,8 @@ export class Pagenation extends BasePagenation implements IPagenation {
     const store = ShopListStore();
     const type = localStorage.getItem("type");
     store.getSellerList(type ? type : "pw", currentId);
-    // this.render();
+    this.currentPage = currentId; //store.currentpage;
+    this.render();
   }
   toString() {
     console.log(
