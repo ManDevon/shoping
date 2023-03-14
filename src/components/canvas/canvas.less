@@ -1,0 +1,31 @@
+@border: 1px solid #b1b1b1;
+
+.cvs-waper {
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  padding: 0 15%;
+  flex-wrap: wrap;
+  .cvs-nav {
+    border: @border;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    .title {
+      width: fit-content;
+      background-color: #8d8d8d;
+      border-radius: 10px 0 0 10px;
+      padding: 0 10px;
+    }
+  }
+  .cvs-item {
+    width: 250px;
+    height: 300px;
+    border: @border;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}

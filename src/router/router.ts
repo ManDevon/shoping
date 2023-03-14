@@ -33,14 +33,14 @@ const routes: RouteRecordRaw[] = [
         children: [
           {
             path: "/source/packedge-list",
-            name: "PkgWm",
+            name: "sourcelist",
             component: () => import("@/components/shopinglist/ShopContent.vue"),
           },
         ],
       },
       {
         path: "/spackedge",
-        name: "SourcePackedge",
+        name: "sourcepackedge",
         component: () =>
           import("@/pages/content/children/sourcepackedge/SourcePackedge.vue"),
       },

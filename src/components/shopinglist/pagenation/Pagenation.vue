@@ -5,7 +5,7 @@
         <img src="@/assets/icons/v1/left.svg" />
       </li>
     </ul>
-    <ul id="loop" ref="loop" :totalpage="props.totalpage"></ul>
+    <ul id="loop" ref="loop"></ul>
     <ul>
       <li class="navli" @click="page.prev()">
         <img src="@/assets/icons/v1/left.svg" />
