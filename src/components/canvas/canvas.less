@@ -1,4 +1,4 @@
-@border: 1px solid #b1b1b1;
+@border: 1px solid #f3f1f1;
 
 .cvs-waper {
   display: flex;
@@ -6,20 +6,40 @@
   justify-content: left;
   padding: 0 15%;
   flex-wrap: wrap;
+  margin-top: 20px;
   .cvs-nav {
     border: @border;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-top: 10px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+    overflow: hidden;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
     .title {
       width: fit-content;
-      background-color: #8d8d8d;
-      border-radius: 10px 0 0 10px;
-      padding: 0 10px;
+      background-color: #bebdbd;
+      padding: 11px 10px;
+      min-width: 80px;
+      text-align: left;
     }
+    .child-wap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid #f3f1f1;
+      .style-item {
+        min-width: 100px;
+      }
+    }
+  }
+  a {
+    cursor: pointer;
+    color: #333;
+    text-decoration: underline;
   }
   .cvs-item {
     width: 250px;

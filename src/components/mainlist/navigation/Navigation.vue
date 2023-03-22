@@ -19,7 +19,28 @@
 import _ from "lodash";
 import { reactive, ref } from "vue";
 import { navconfig, navType } from "./navigation.config";
-const config = reactive(navconfig);
+import { Config } from "../../banner/banner.config";
+import { useRoute } from "vue-router";
+const route = useRoute();
+const getConfig = () => {
+  const meta = route.meta;
+  if (meta.isPkgRoute) {
+    return Config.local;
+  }
+  const defaultNav_more = {
+    id: navconfig[navconfig.length - 1].id + 1,
+    title: "更多",
+    path: "",
+    type: "more",
+    default: false,
+  };
+  if (navconfig[navconfig.length - 1].title !== defaultNav_more.title) {
+    navconfig.push(defaultNav_more);
+  }
+  return navconfig;
+};
+const config = reactive(getConfig());
+
 const showMore = ref(false);
 const getDefault = (config: navType[]): navType => {
   return config[
@@ -32,17 +53,8 @@ const getDefault = (config: navType[]): navType => {
   ];
 };
 let defCurrentItem = reactive(getDefault(config));
-const defaultNav_more = {
-  id: config[config.length - 1].id + 1,
-  title: "更多",
-  path: "",
-  type: "more",
-  default: false,
-};
-if (config[config.length - 1].title !== defaultNav_more.title) {
-  config.push(defaultNav_more);
-}
-const eventHandler = (options: typeof defaultNav_more) => {
+
+const eventHandler = (options: navType) => {
   if (options.id === config[config.length - 1].id) {
     //show more
     if (showMore.value) {

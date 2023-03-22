@@ -4,7 +4,7 @@
       <div class="local" v-if="props.from === 'index'">
         <div><span>地区筛选:</span></div>
         <ul>
-          <li v-for="item in localList">{{ item.name }}</li>
+          <li v-for="item in localList">{{ item.title }}</li>
         </ul>
       </div>
       <div class="s-waper">

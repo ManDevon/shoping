@@ -1,49 +1,71 @@
-export const Config = {
+import { navType } from "../mainlist/navigation/navigation.config";
+
+export const Config: {
+  local: navType[];
+} = {
   local: [
     {
       id: 1,
-      name: "白沟",
+      title: "白沟",
       path: "",
+      type: "",
+      default: true,
     },
     {
       id: 2,
-      name: "新城",
+      title: "新城",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 3,
-      name: "高碑店",
+      title: "高碑店",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 4,
-      name: "白沟其他",
+      title: "白沟其他",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 5,
-      name: "广州",
+      title: "广州",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 6,
-      name: "高阳",
+      title: "高阳",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 7,
-      name: "和道国际",
+      title: "和道国际",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 8,
-      name: "邵东",
+      title: "邵东",
       path: "",
+      type: "",
+      default: false,
     },
     {
       id: 9,
-      name: "其他",
+      title: "其他",
       path: "",
+      type: "",
+      default: false,
     },
   ],
 };

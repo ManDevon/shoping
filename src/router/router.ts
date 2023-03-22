@@ -6,8 +6,8 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     name: "login2",
     meta: {
-      isSingle: true,
       isAuth: true,
+      isPkgRoute: false,
     },
     redirect: "/login",
   },
@@ -15,7 +15,8 @@ const routes: RouteRecordRaw[] = [
     path: "/login",
     name: "login",
     meta: {
-      isSingle: true,
+      isAuth: true,
+      isPkgRoute: false,
     },
     component: login,
   },
@@ -30,10 +31,18 @@ const routes: RouteRecordRaw[] = [
         name: "source",
         component: () => import("@/pages/content/children/index/index.vue"),
         redirect: "/source/packedge-list",
+        meta: {
+          isAuth: false,
+          isPkgRoute: false,
+        },
         children: [
           {
             path: "/source/packedge-list",
             name: "sourcelist",
+            meta: {
+              isAuth: false,
+              isPkgRoute: false,
+            },
             component: () => import("@/components/shopinglist/ShopContent.vue"),
           },
         ],
@@ -41,6 +50,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: "/spackedge",
         name: "sourcepackedge",
+        meta: {
+          isAuth: false,
+          isPkgRoute: true,
+        },
         component: () =>
           import("@/pages/content/children/sourcepackedge/SourcePackedge.vue"),
       },

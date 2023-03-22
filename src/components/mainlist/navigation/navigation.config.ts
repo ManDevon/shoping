@@ -5,7 +5,7 @@ export declare type navType = {
   type: string;
   default: boolean;
 };
-export const navconfig = [
+export const navconfig: navType[] = [
   {
     id: 1,
     title: "女包",
