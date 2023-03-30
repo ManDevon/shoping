@@ -23,3 +23,4 @@
 // export default {
 //   loopNumber,
 // };
+// declare module "fabric";

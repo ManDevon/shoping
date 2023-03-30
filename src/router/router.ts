@@ -21,6 +21,15 @@ const routes: RouteRecordRaw[] = [
     component: login,
   },
   {
+    path: "/web",
+    name: "webcomponents",
+    meta: {
+      isAuth: false,
+      isPkgRoute: false,
+    },
+    component: () => import("@/pages/web/Index.vue"),
+  },
+  {
     path: "/index",
     name: "Index",
     component: () => import("@/pages/content/Content.vue"),
