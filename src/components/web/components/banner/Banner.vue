@@ -13,6 +13,10 @@
 import { fabric } from "fabric";
 import { onMounted } from "vue";
 import Myprogress from "@/components/progress/MyProgress.vue";
+const props = defineProps<{
+  styleMode: "m" | "w";
+  bannerImg?: string[];
+}>();
 const handlvalue = (progressValue: number) => {
   const res = progressValue + 1;
   return res;
@@ -28,8 +32,4 @@ onMounted(() => {
   });
   canvas.add(rect);
 });
-const props = defineProps<{
-  styleMode: "m" | "w";
-  bannerImg?: string[];
-}>();
 </script>
